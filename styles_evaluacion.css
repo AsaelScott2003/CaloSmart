@@ -1,0 +1,196 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+span, p, label, button{
+    user-select: none;
+}
+
+body{
+    --bg-color-: #bec ;
+    --dark-color-: #8da ;
+    --ligth-color-: #eee;
+    --text-color-: #333 ;
+    --input-color-:#ddd;
+    background-color: var(--bg-color-);
+    font-family: sans-serif;
+}
+
+
+.body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav{
+    width: 15dvw;
+    background-color: var(--ligth-color-);
+    position: relative;
+}
+
+.open-menu input{
+    display: none;
+}
+
+.open-menu label{
+    background-color: var(--ligth-color-);
+    border-radius: 50%;
+    position: absolute;
+    right: -20px;
+    bottom: 20px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.open-menu label:hover{
+    background-color: var(--input-color-);
+}
+
+.nav:has(input[type="checkbox"]:checked){
+    width: fit-content;
+}
+
+.nav:has(input[type="checkbox"]:checked) .nav__container .nav__component p{
+    display: none;
+}
+
+.nav:has(input[type="checkbox"]:checked) .nav__user p{
+    display: none;
+}
+
+.nav:has(input[type="checkbox"]:checked) .nav__user span{
+    font-size: 30px;
+}
+
+
+
+.nav__user{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nav__user span{
+    font-size: 60px;
+    padding: 10px;
+}
+
+.nav__user p{
+    font-size: 20px;
+}
+
+
+.nav__container ul{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+}
+
+.nav__component{
+    display: flex;
+    padding: 6px 12px;
+    margin: 0 8px;
+    border-radius: 6px;
+}
+
+.nav__component:hover{
+    background-color: var(--dark-color-);
+}
+
+.nav__component span{
+    font-size: 30px;
+    padding: 5px;
+}
+
+.nav__component p{
+    align-self: center;
+}
+
+.nav__component a{
+    text-decoration: none;
+    color: var(--text-color-);
+    align-self: center;
+}
+
+.content{
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    height: 15dvh;
+    background-color: var(--ligth-color-);
+    display: flex;
+    justify-content: end;
+}
+
+.header__login{
+    margin-right: 100px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header__login button{
+    background-color: var(--dark-color-);
+    color: var(--text-color-);
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+.header__login button:hover{
+    border: 1px solid black;
+}
+
+.now{
+    font-weight: bold;
+    background-color: var(--bg-color-);
+}
+
+.now:hover{
+    background-color: var(--bg-color-);
+}
+
+.count{
+    display: grid;
+    text-align: center;
+    width: 75dvw;
+    margin: 15px;
+    gap: 25px;
+}
+
+.redact{
+    background-color: var(--text-color-);
+    color: var(--ligth-color-);
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+.redact:hover{
+    border: 1px solid black;
+}
+
+.tabla{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabla input{
+    width: 200px;
+    justify-self: center;
+}

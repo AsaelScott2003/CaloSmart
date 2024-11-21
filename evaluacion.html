@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="styles_evaluacion.css">
+    <title>Evaluacion</title>
+</head>
+<body class="body">
+    <nav class="nav">
+        <form class="open-menu">
+            <input type="checkbox" id="open-menu">
+            <label for="open-menu" class="material-symbols-outlined">menu</label>
+        </form>
+        <div class="nav__user">
+            <span class="material-symbols-outlined">account_circle</span>
+            <p>Usuario</p>
+        </div>
+        <div class="nav__container">
+            <ul>
+                <li class="nav__component">
+                    <span class="material-symbols-outlined">person</span>
+                    <a href="perfil.html"><p>Perfil de usuario</p></a>
+                </li>
+                <li class="nav__component now">
+                    <span class="material-symbols-outlined">list_alt</span>
+                    <a href="evaluacion.html"><p>Evaluacion Nutricional</p></a>
+                </li>
+                <li class="nav__component">
+                    <span class="material-symbols-outlined">monitoring</span>
+                    <a href="estadistica.html"><p>Estadistica y progreso</p></a>
+                </li>
+                <li class="nav__component">
+                    <span class="material-symbols-outlined">groups</span>
+                    <a href="comunidad.html"><p>Comunidad</p></a>
+                </li>
+                <li class="nav__component">
+                    <span class="material-symbols-outlined">flatware</span>
+                    <a href="alimentos.html"><p>Alimentos</p></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <header class="header">
+            <div class="header__login">
+                <button>Iniciar Session</button>
+                <button>Registrarse</button>
+            </div>
+        </header>
+        <div class="count">
+
+            <h3>Conoce tus calorias aqui</h3>
+
+            <form action="" class="contcal">
+                <p>Ingrese su peso en kg</p>
+                <input type="number" name="kg" id="kg"><br> 
+
+                <p>Ingrese su altura en cm</p>
+                <input type="number" name="cm" id="cm"><br> 
+
+                <p>Ingrese su edad en años</p>
+                <input type="number" name="años" id="años">
+                <br> <br> 
+
+                <div class="tabla">
+                <p>Segun la tabla, pon tu nivel de actividad</p>
+                <input type="float" name="nact" id="nact">
+                <img src="img/tablaActividad.png" width="300px">
+                <br><br>
+                </div>
+
+                <input type="button" class="redact" value="Mostrar mis calorias" onclick="calorias();">
+            </form>
+            <script>
+                function calorias(){
+
+                    var kg = parseInt(document.getElementById('kg').value);
+                    var cm = parseInt(document.getElementById('cm').value);
+                    var años = parseInt(document.getElementById('años').value);
+                    var nact = parseFloat(document.getElementById('nact').value)
+                    var sumh =((10*kg) + (6.25*cm) - (5*años) + 5)*nact;
+                    var summ =((10*kg) + (6.25*cm) - (5*años) - 161)*nact;
+                    alert("Si usted es hombre, su numero de calorias recomendadas son: "+Math.round(sumh)+"\nSi usted es mujer, su numero de calorias recomendadas son: "+Math.round(summ))
+                }
+            </script>
+
+        </div>  
+    </div>
+</body>
+</html>
