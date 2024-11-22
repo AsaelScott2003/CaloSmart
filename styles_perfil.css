@@ -11,6 +11,7 @@ span, p, label, button{
 body{
     --bg-color-: #bec ;
     --dark-color-: #8da ;
+    --darkest-color-: #3a8 ;
     --ligth-color-: #eee;
     --text-color-: #333 ;
     --input-color-:#ddd;
@@ -69,7 +70,6 @@ body{
 
 .nav__user{
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .nav__user span{
@@ -81,6 +81,12 @@ body{
     font-size: 20px;
 }
 
+
+.nav__container{
+    display: flex;
+    align-items: center;
+    height: 75dvh;
+}
 
 .nav__container ul{
     display: flex;
@@ -158,34 +164,46 @@ body{
     background-color: var(--bg-color-);
 }
 
-.main{
-    display: grid;
+
+
+
+
+.div-reference{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85dvh;
+    justify-content: space-between;
+    padding: 30px;
+}
+.user_info{
+    display: flex;
     text-align: center;
-    margin-top: 1dvh;
-    height: 84dvh;
-    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     align-items: center;
 }
 
-.main__user:first-child{
-    grid-column: span 2;
-    font-size: 20px;
-    font-weight: bold;
+.User_info-card{
+    background-color: var(--ligth-color-);
+    border-radius: 12px;
+    color: var(--text-color-);
+    font-size: 12px;
+}
+.upperdiv{
+    padding: 12px;
 }
 
-.main__user:nth-child(4){
-    grid-column: span 2;
+.downdiv{
+    border-radius:0 0 12px 12px;
+    background-color: var(--darkest-color-);
+    padding: 12px;
 }
 
-.main__user:last-child{
-    grid-column: span 2;
-}
-
-.main__user input{
+.User_info-card input{
     padding: 10px;
-    margin-top: 10px;
     border-radius: 6px;
     border: none;
+    background-color: var(--ligth-color-);
 }
 
 .main__user button{
