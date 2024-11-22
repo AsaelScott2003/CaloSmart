@@ -54,24 +54,63 @@
             <h3>Conoce tus calorias aqui</h3>
 
             <form action="" class="contcal">
-                <p>Ingrese su peso en kg</p>
-                <input type="number" name="kg" id="kg"><br> 
+                <div class="questions">
+                    <div class="contcaldiv">
+                    <p>Ingrese su peso en kg</p>
+                        <input class="contcalinput" type="number" name="kg" id="kg" placeholder="Peso en kg"><br> 
+                    </div>
+                
+                    <div class="contcaldiv">
+                        <p>Ingrese su altura en cm</p>
+                        <input class="contcalinput" type="number" name="cm" id="cm" placeholder="Altura en cm"><br> 
+                    </div>
 
-                <p>Ingrese su altura en cm</p>
-                <input type="number" name="cm" id="cm"><br> 
+                    <div class="contcaldiv">
+                        <p>Ingrese su edad en años</p>
+                        <input class="contcalinput" type="number" name="años" id="años" placeholder="Edad">
+                    </div>
 
-                <p>Ingrese su edad en años</p>
-                <input type="number" name="años" id="años">
-                <br> <br> 
-
-                <div class="tabla">
-                <p>Segun la tabla, pon tu nivel de actividad</p>
-                <input type="float" name="nact" id="nact">
-                <img src="img/tablaActividad.png" width="300px">
-                <br><br>
+                    <div class="contcaldiv">
+                        <p>Introduzca nivel de actividad segun la tabla </p>
+                        <input class="contcalinput" type="float" name="nact" id="nact" placeholder="Nivel de actividad">
+                    </div>
+                    
                 </div>
 
-                <input type="button" class="redact" value="Mostrar mis calorias" onclick="calorias();">
+                <table class="tabla">
+                    <tr class="titulo_tabla">
+                        <td>Nivel de actividad</td>
+                        <td>Valor en mujeres</td>
+                        <td>Valor en hombres</td>
+                        <td>Descripcion</td>
+                    </tr>
+                    <tr>
+                        <td>Sedentaria</td>
+                        <td>1.2</td>
+                        <td>1.2</td>
+                        <td>Sin actividad fisica</td>
+                    </tr>
+                    <tr>
+                        <td>Liviana</td>
+                        <td>1.56</td>
+                        <td>1.55</td>
+                        <td>3 horas por semana</td>
+                    </tr>
+                    <tr>
+                        <td>Moderada</td>
+                        <td>1.64</td>
+                        <td>1.78</td>
+                        <td>seis horas por semana</td>
+                    </tr>
+                    <tr>
+                        <td>Intensa</td>
+                        <td>1.82</td>
+                        <td>2.10</td>
+                        <td>cuatro a cinco horas diaras</td>
+                    </tr>
+                </table>
+                <div id="resultado" class="resultado"> </div>         
+                <input id="resultado" type="button" class="redact" value="Mostrar mis calorias" onclick="calorias();">
             </form>
             <script>
                 function calorias(){
@@ -82,7 +121,7 @@
                     var nact = parseFloat(document.getElementById('nact').value)
                     var sumh =((10*kg) + (6.25*cm) - (5*años) + 5)*nact;
                     var summ =((10*kg) + (6.25*cm) - (5*años) - 161)*nact;
-                    alert("Si usted es hombre, su numero de calorias recomendadas son: "+Math.round(sumh)+"\nSi usted es mujer, su numero de calorias recomendadas son: "+Math.round(summ))
+                    document.getElementById('resultado').innerText = "Si usted es hombre, su numero de calorias recomendadas son: "+Math.round(sumh)+"\nSi usted es mujer, su numero de calorias recomendadas son: "+Math.round(summ);
                 }
             </script>
 
